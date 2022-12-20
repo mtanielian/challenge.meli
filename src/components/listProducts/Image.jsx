@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-const Image = ({ thumbnail, title }) => {
+const Image = ({ thumbnail, title, handleClickDetail = () => {} }) => {
   return (
     <img
       src={thumbnail}
@@ -8,7 +8,8 @@ const Image = ({ thumbnail, title }) => {
       loading="lazy"
       width='180px'
       height='180px'
-      style={{marginTop:'16px', borderRadius: '4px'}}
+      style={{marginTop:'16px', borderRadius: '4px', cursor: 'pointer'}}
+      onClick={handleClickDetail}
     />
   )
 }
@@ -16,6 +17,7 @@ const Image = ({ thumbnail, title }) => {
 Image.propType = {
   thumbnail: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  handleClickDetail: PropTypes.func.isRequired
 }
 
 
