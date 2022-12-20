@@ -8,7 +8,6 @@ import SearchProductResultsPage from "../pages/SearchProductResultsPage"
 
 const AppRouter = () => {
   return (
-
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout><HomePage /></MainLayout>} />

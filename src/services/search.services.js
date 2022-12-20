@@ -3,7 +3,6 @@ import api from "./api"
 
 export const searchProducts = async ({query, limit = 4}) => {
   const { data } = await api.get(`/search?q=${query}&${limit}=4`)
-  console.log(data);
   return data
 }
 

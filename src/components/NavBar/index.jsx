@@ -1,9 +1,8 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AppBar, Box, Toolbar, InputBase, Divider, Paper } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
-import { useContext, useState } from 'react';
-import { ProductContext } from '../../context/ProductContext';
-import { useNavigate } from 'react-router-dom';
 
 
 const msgInputSerach = 'Nunca dejes de buscar'
@@ -16,7 +15,7 @@ const NavBar = () => {
   const handleSumbit = (e) => {
 
     e.preventDefault()
-    if (search.trim().length > 4) {
+    if (search.trim().length > 3) {
       navigate({
         pathname: '/items',
         search: '?search='+search,
