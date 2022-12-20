@@ -4,7 +4,7 @@ import { ProductContext } from "../context/ProductContext";
 import { searchProducts } from "../services/search.services";
 
 const useFetchProducts = () => {
-  const { setProducts, products,  setFilters, setLoading, setError, error, loading } = useContext(ProductContext) 
+  const { setProducts, setProductDetail, products,  setFilters, setLoading, setError, error, loading } = useContext(ProductContext) 
   
   const navigate = useNavigate()
   const location = useLocation()
@@ -19,9 +19,10 @@ const useFetchProducts = () => {
     try {
       setLoading(true)
       const query = encodeURI(search)
-      const productsFinded = await searchProducts({query})
+      const productsFinded = await searchProducts({query, limit: 4})
       setProducts(productsFinded.results)
-      setFilters(productsFinded.filters)
+      setFilters(productsFinded.filters[0].values[0].path_from_root)
+      setProductDetail([])
       setLoading(false)
     } catch (error) {
       setError(true)

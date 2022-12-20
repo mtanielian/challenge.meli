@@ -6,13 +6,15 @@ export const ProductContextProvider = ({children}) => {
   const [filters, setFilters] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
+  const [productDetail, setProductDetail] = useState({})
   
   return (
     <ProductContext.Provider value={{
       products, setProducts,
       filters, setFilters,
       loading, setLoading,
-      error, setError
+      error, setError,
+      productDetail, setProductDetail
     }}>
       {children}
     </ProductContext.Provider>

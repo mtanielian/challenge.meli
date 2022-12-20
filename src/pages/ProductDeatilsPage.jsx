@@ -1,31 +1,19 @@
-import { useEffect } from "react"
-import { useParams } from 'react-router-dom';
-import { getProductById } from "../services/search.services";
-
-
+import Breadcrumbs from "../components/Breadcrumbs"
+import { Container, Skeleton } from "@mui/material"
+import useFetchProdcutById from "../hooks/useFetchProdcutById"
+import ProductDetail from "../components/productDetail/ProductDetail"
 
 const ProductDeatilsPage = () => {
-  const { id } = useParams();
-  const loadProductDetail = async () => {
-    const {item, description} = await getProductById({ id })
-    console.log(item)
-    console.log(description)
-  }
-
-
-
-
-  useEffect(() => {
-    if (id)
-      loadProductDetail()
-
-  }, [id])
-
-
-
+  const { loading, productDetail } =  useFetchProdcutById()
 
   return (
-    <div>ProductDeatilsPage</div>
+    <>
+    <Breadcrumbs />
+    <Container sx={{ height:'auto', backgroundColor:'white', borderRadius: '5xp',  }}>
+      {loading && Object.keys(productDetail).length === 0 ? <Skeleton variant='rounded' sx={{height:'100%', width:'100%'}} />
+        : <ProductDetail />}
+    </Container>
+    </>
   )
 }
 

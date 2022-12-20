@@ -8,7 +8,6 @@ import SearchIcon from '@mui/icons-material/Search';
 const msgInputSerach = 'Nunca dejes de buscar'
 
 const NavBar = () => {
-
   const [search, setSearch] = useState('')
   const navigate = useNavigate();
 
@@ -22,7 +21,6 @@ const NavBar = () => {
       });
     }
   }
-
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -45,6 +43,7 @@ const NavBar = () => {
                 loading="lazy"
                 width={50}
                 alt='Logo Mercado Libre'
+                onClick={() => navigate("/")}
               />
           </IconButton>
           <Paper

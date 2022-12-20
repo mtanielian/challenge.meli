@@ -1,13 +1,11 @@
 import { useContext } from "react"
 import { ProductContext } from "../../context/ProductContext"
 import { useNavigate } from "react-router-dom";
-
-
-import { Divider, Grid } from "@mui/material"
 import Image from "./Image"
 import Description from "./Description"
 import Address from "./Address"
-import { Navigate } from "react-router-dom"
+import { Divider, Grid } from "@mui/material"
+
 
 const ListProducts = () => {
   const {products = {}} = useContext(ProductContext)
