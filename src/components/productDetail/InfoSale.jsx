@@ -8,10 +8,10 @@ const translate = condition => condition === 'new' ? 'Nuevo' : 'Usado'
 const InfoSale = ({condition, soldQuantity, title, currencyId, price}) => {
   return (
     <Box>
-      <Box mb='16px'><Typography variant='body1' sx={{fontSize:'14px'}}>{translate(condition)} - {soldQuantity} vendidos</Typography></Box>
-      <Box mb='32px'><Typography variant='body1' sx={{fontSize:'24px'}}>{title}</Typography></Box>
+      <Box mb='16px'><Typography variant='body1' sx={{fontSize:'14px'}} aria-label='condition'>{translate(condition)} - {soldQuantity} vendidos</Typography></Box>
+      <Box mb='32px'><Typography variant='body1' sx={{fontSize:'24px'}} aria-label='title'>{title}</Typography></Box>
       <Box mb='32px'>
-          <Typography variant='body1' sx={{fontSize:'46px'}}>
+          <Typography variant='body1' sx={{fontSize:'46px'}} aria-label='price'>
           {formatPrice({
             price, currency: currencyId
           })}

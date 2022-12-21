@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 
-const Image = ({ thumbnail, title, handleClickDetail = () => {} }) => {
+const Image = ({ thumbnail, title = '', handleClickDetail = () => {} }) => {
+  if (!thumbnail) return <></>
   return (
     <img
       src={thumbnail}
