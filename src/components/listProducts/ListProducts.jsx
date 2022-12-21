@@ -8,17 +8,18 @@ import { Divider, Grid } from "@mui/material"
 
 
 const ListProducts = () => {
-  const {products = {}} = useContext(ProductContext)
+  const { products } = useContext(ProductContext)
   const navigate = useNavigate()
 
   const handleClickDetail = (id) => {
     if (id && id !== '') 
       navigate(`/items/${id}`)
-
   }
+  if (!products || products.length === 0) return <div>Loading...</div>
+
   return (
     products.length > 0 && products.map(({ id, title = '', thumbnail = '', price = 0, prices = {}, shipping = {} ,seller_address = {} }) => { return (
-      <Grid container sx={{display: 'flex', justifyContent:'center', flexDirection:'row'}} key={id}>
+      <Grid aria-label="product" container sx={{display: 'flex', justifyContent:'center', flexDirection:'row'}} key={id}>
         <Grid item xs={2}>
           <Image title={title} thumbnail={thumbnail} handleClickDetail={() => handleClickDetail(id)} />
         </Grid>

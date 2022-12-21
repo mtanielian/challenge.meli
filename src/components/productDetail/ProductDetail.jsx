@@ -6,11 +6,10 @@ import Description from './Description'
 
 const ProductDetail = () => {
   const { productDetail } = useContext(ProductContext)
-  const { currency_id, price, title, sold_quantity, pictures, condition, plain_text } = productDetail
-
+  if (!productDetail || Object.keys(productDetail).length === 0) return (<div>Loading...</div>)
   
+  const { currency_id, price, title, sold_quantity, pictures, condition, plain_text } = productDetail
   return (
-    Object.keys(productDetail).length > 0 &&
     <Grid container sx={{display: 'flex', justifyContent:'center', flexDirection:'row', pt:'32px'}}>
       <Grid item xs={8}>
         <img src={pictures[0].url} alt={title} />
