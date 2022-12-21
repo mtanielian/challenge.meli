@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## replace .env.template for .env (and add endpoint to api.mercadolibre)
+
 ## Available Scripts
 
 In the project directory, you can run:
