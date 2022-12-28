@@ -1,6 +1,6 @@
-import { Helmet } from "react-helmet";
-import NavBar from "../components/NavBar"
-import useMetaTags from "../hooks/useMetaTags";
+import { Helmet } from 'react-helmet'
+import NavBar from '../components/NavBar'
+import useMetaTags from '../hooks/useMetaTags'
 
 const MainLayout = ({ children }) => {
   const { title, description, image } = useMetaTags()

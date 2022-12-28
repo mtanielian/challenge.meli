@@ -1,13 +1,13 @@
-import { useContext } from "react"
-import { useLocation, useParams } from 'react-router-dom';
-import { ProductContext } from "../context/ProductContext"
+import { useContext } from 'react'
+import { useLocation, useParams } from 'react-router-dom'
+import { ProductContext } from '../context/ProductContext'
 
 
 const useMetaTags = () => {
   const {products, productDetail} = useContext(ProductContext)
   const location = useLocation()
-  const searchParams = new URLSearchParams(location.search);
-  let search = searchParams.get('search');    
+  const searchParams = new URLSearchParams(location.search)
+  let search = searchParams.get('search')    
 
   let title = 'Pagina de inicio MELI'
   let description = 'Nunca dejes de buscar'
@@ -22,7 +22,7 @@ const useMetaTags = () => {
   }
 
   //pagina de detalle
-  const { id } = useParams();
+  const { id } = useParams()
   if (Boolean(id) && Object.keys(productDetail).length > 0) {
     title = `Detalle del producto ${productDetail.title}`
     description = `pagina de busqueda, ${productDetail.title}`

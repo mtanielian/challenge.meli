@@ -1,7 +1,16 @@
-import axios from "axios"
+import axios from 'axios'
 
-const api = axios.create({
-  baseURL: process.env.REACT_APP_URI_MELI
-})
+class Api {
+  constructor() {
+    this.http = axios.create({
+      baseURL: process.env.REACT_APP_URI_MELI
+    })
+  }
 
-export default api
+  get(url) {
+    return this.http.get(url)
+  }
+
+}
+
+export default new Api()

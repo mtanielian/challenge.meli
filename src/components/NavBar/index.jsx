@@ -1,15 +1,15 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { AppBar, Box, Toolbar, InputBase, Divider, Paper } from '@mui/material';
-import IconButton from '@mui/material/IconButton';
-import SearchIcon from '@mui/icons-material/Search';
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { AppBar, Box, Toolbar, InputBase, Divider, Paper } from '@mui/material'
+import IconButton from '@mui/material/IconButton'
+import SearchIcon from '@mui/icons-material/Search'
 
 
 const msgInputSerach = 'Nunca dejes de buscar'
 
 const NavBar = () => {
   const [search, setSearch] = useState('')
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const handleSumbit = (e) => {
 
@@ -18,7 +18,7 @@ const NavBar = () => {
       navigate({
         pathname: '/items',
         search: '?search='+search,
-      });
+      })
     }
   }
 
@@ -27,24 +27,24 @@ const NavBar = () => {
       <AppBar position="static" sx={{bgcolor: '#FFE600'}}>
         <Toolbar>
           <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-              sx={{ width: '10%' }}
-              style={{ marginLeft: '0px',
-                paddingLeft: '0px',
-                paddingRight: '2%',
-                justifyContent: 'flex-end'
-              }}
-            >
-             <img
-                src='/Logo_ML@2x.png'
-                loading="lazy"
-                width={50}
-                alt='Logo Mercado Libre'
-                onClick={() => navigate("/")}
-              />
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            sx={{ width: '10%' }}
+            style={{ marginLeft: '0px',
+              paddingLeft: '0px',
+              paddingRight: '2%',
+              justifyContent: 'flex-end'
+            }}
+          >
+            <img
+              src='/Logo_ML@2x.png'
+              loading="lazy"
+              width={50}
+              alt='Logo Mercado Libre'
+              onClick={() => navigate('/')}
+            />
           </IconButton>
           <Paper
             component="form"
@@ -65,7 +65,7 @@ const NavBar = () => {
         </Toolbar>
       </AppBar>
     </Box>
-  );
+  )
 }
 
 export default NavBar

@@ -1,5 +1,5 @@
-import { render } from "@testing-library/react"
-import SkeletonLoading from "../../src/components/listProducts/SkeletonLoading"
+import { render } from '@testing-library/react'
+import SkeletonLoading from '../../src/components/listProducts/SkeletonLoading'
 
 describe('Test <SkeletonLoading />', () => {
   test('show default show 4 skeletons', () => {

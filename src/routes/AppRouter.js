@@ -1,8 +1,8 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import MainLayout from "../layouts/MainLayout"
-import HomePage from "../pages/HomePage"
-import ProductDeatilsPage from "../pages/ProductDeatilsPage"
-import SearchProductResultsPage from "../pages/SearchProductResultsPage"
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import MainLayout from '../layouts/MainLayout'
+import HomePage from '../pages/HomePage'
+import ProductDeatilsPage from '../pages/ProductDeatilsPage'
+import SearchProductResultsPage from '../pages/SearchProductResultsPage'
 
 
 
@@ -17,7 +17,7 @@ const AppRouter = () => {
       </Routes>
     </BrowserRouter>
 
-    )
+  )
 }
 
 export default AppRouter

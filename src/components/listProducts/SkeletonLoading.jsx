@@ -1,5 +1,4 @@
 import { Skeleton, Stack } from '@mui/material'
-import React from 'react'
 
 function SkeletonLoading({ cantItems = 4 }) {
   const cant = [...new Array(cantItems).keys()]

@@ -1,20 +1,20 @@
-import { useContext, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { ProductContext } from "../context/ProductContext";
-import { searchProducts } from "../services/search.services";
+import { useContext, useEffect } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { ProductContext } from '../context/ProductContext'
+import { searchProducts } from '../services/search.services'
 
 const useFetchProducts = () => {
   const { setProducts, setProductDetail, products,  setFilters, setLoading, setError, error, loading } = useContext(ProductContext) 
   
   const navigate = useNavigate()
   const location = useLocation()
-  const searchParams = new URLSearchParams(location.search);
+  const searchParams = new URLSearchParams(location.search)
 
 
   const loadProducts = async() => {
-    let search = searchParams.get('search');
+    let search = searchParams.get('search')
     if (!search || search.trim().length < 3)
-      return navigate("/")
+      return navigate('/')
     
     try {
       setLoading(true)
@@ -36,9 +36,9 @@ const useFetchProducts = () => {
   
   useEffect(() => {   
     loadProducts()
-  }, [])
+  }, [location.search])
 
-   return {
+  return {
     loading, error, products
   }
 }

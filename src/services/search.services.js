@@ -1,4 +1,4 @@
-import api from "./api"
+import api from './api'
 
 
 export const searchProducts = async ({query, limit = 4}) => {
